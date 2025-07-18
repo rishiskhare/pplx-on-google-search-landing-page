@@ -1,4 +1,3 @@
-/* Global Resets */
 * {
     margin: 0;
     padding: 0;
@@ -16,7 +15,6 @@ body {
     background-color: #ffffff;
 }
 
-/* Custom Font */
 @font-face {
     font-family: "TiemposHeadline-Regular";
     src: url("assets/TiemposHeadline-Regular.ttf") format("truetype");
@@ -24,7 +22,6 @@ body {
     font-style: normal;
 }
 
-/* New FK Grotesk Font */
 @font-face {
     font-family: "FKGrotesk-Regular";
     src: url("assets/FKGrotesk-Regular.ttf") format("truetype");
@@ -38,7 +35,6 @@ body {
     padding: 0 20px;
 }
 
-/* Header */
 .header {
     position: fixed;
     top: 0;
@@ -94,7 +90,6 @@ body {
     color: #3CA0B6;
 }
 
-/* Hero Section */
 .hero {
     padding: 8rem 0 4rem;
     background: linear-gradient(135deg, #f0fdff 0%, #f1f5f9 100%);
@@ -162,12 +157,10 @@ body {
 }
 
 .btn-secondary:hover {
-    background: #f3f4f6; /* subtle darker shade */
-    border-color: #2d8a9e; /* slightly darker teal border */
+    background: #f3f4f6;
     transform: scale(1.05);
 }
 
-/* GitHub icon hover swap */
 .github-icon {
     width: 20px;
     height: 20px;
@@ -192,7 +185,6 @@ body {
     font-weight: 500;
 }
 
-/* Features Section */
 .features {
     padding: 5rem 0;
     background: white;
@@ -260,7 +252,6 @@ body {
     line-height: 1.6;
 }
 
-/* How It Works Section */
 .how-it-works {
     padding: 5rem 0;
     background: #f8fafc;
@@ -305,7 +296,6 @@ body {
     line-height: 1.6;
 }
 
-/* Download Section */
 .download {
     padding: 5rem 0;
     background: linear-gradient(135deg, #3CA0B6 0%, #2d8a9e 100%);
@@ -397,7 +387,6 @@ body {
     opacity: 1;
 }
 
-/* Footer */
 .footer {
     background: #1f2937;
     color: white;
@@ -437,7 +426,6 @@ body {
     margin-left: 2rem;
 }
 
-/* FAQ Section */
 .faq {
     padding: 5rem 0;
     background: #ffffff;
@@ -507,7 +495,6 @@ body {
     line-height: 1.6;
 }
 
-/* FAQ links styling */
 .faq-list a {
     color: #3CA0B6;
     text-decoration: none;
@@ -518,28 +505,72 @@ body {
     text-decoration: underline;
 }
 
-/* Apply custom font to headers */
 .hero-title,
 .section-title,
 .faq-title {
     font-family: "TiemposHeadline-Regular", serif;
 }
 
-/* Brand name uses FK Grotesk */
 .brand-name {
     font-family: "FKGrotesk-Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
-/* Responsive Design */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.hamburger-line {
+    width: 24px;
+    height: 2px;
+    background: #1f2937;
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+.hamburger.open .line1 {
+    transform: translateY(6px) rotate(45deg);
+}
+
+.hamburger.open .line2 {
+    opacity: 0;
+}
+
+.hamburger.open .line3 {
+    transform: translateY(-6px) rotate(-45deg);
+}
+
 @media (max-width: 768px) {
+    .header {
+        position: relative;
+    }
+
     .nav {
-        flex-direction: column;
+        flex-direction: row;
+        flex-wrap: wrap;
         gap: 1rem;
         padding: 1rem;
     }
 
+    .hamburger {
+        display: flex;
+    }
+
     .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
         gap: 1rem;
+        margin-top: 1rem;
+        align-items: center;
+        text-align: center;
+    }
+
+    .nav-links.open {
+        display: flex;
     }
 
     .hero {
